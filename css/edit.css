@@ -1,0 +1,286 @@
+:root { 
+    --green: #31A74F;
+    --dark-blue: #011627;
+    --light-gray: #f4f4f4;
+    --dark-gray:#727272;
+    --gray:#D9D9D9;
+    --white-gray:#DBDBDB;
+    --white: #ffffff;
+    --red:#E54335;
+    --yellow:#E59c24;
+    --gray-line: #d3d3d3;
+    --b:#F8F8F8;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.image-container {
+    flex-shrink: 0;
+    width: 250px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.editable-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+h1, p, h2 {
+    border-radius: 5px;
+    border: 1px dashed transparent;
+    padding: 1px;
+    display: block;
+    min-height: 20px; 
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    min-height: 40px;
+}
+
+.edit-icon {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--dark-gray);
+}
+
+.edit-icon:hover {
+    color: var(--green);
+}
+
+h1[contenteditable="true"],
+p[contenteditable="true"],
+h2[contenteditable="true"] {
+    outline: none;
+    border: 1px dashed var(--green);
+    background-color: var(--white);
+    background: white;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+select:focus {
+    outline: none;
+    border: 1px dashed var(--green);
+    background-color: var(--light);
+    background-color: white;
+}
+
+.stock-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    border-radius: 15px;
+    justify-content: space-between;
+    width: 100px;
+}
+
+button {
+    background: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input {
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    width: 30px;
+    background: none;
+    outline: none;
+}
+
+.save-btn {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* 📱 Android Phones Portrait Mode */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 220px;
+        height: 280px;
+    }
+
+    .info {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 19px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 18px;
+        width: 90px;
+    }
+
+    .save-btn {
+        padding: 11px;
+    }
+}
+
+/* 💻 Windows Laptops (larger than macOS screens, but smaller than desktop size) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+        gap: 30px;
+    }
+
+    .image-container {
+        width: 280px;
+        height: 350px;
+    }
+
+    .info {
+        width: 380px;
+        padding: 35px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 20px;
+        width: 100px;
+    }
+
+    .save-btn {
+        padding: 13px;
+    }
+}
+
+/* 🖥️ macOS and Larger Screens */
+@media screen and (min-width: 1440px) {
+    .container {
+        gap: 40px;
+    }
+
+    .image-container {
+        width: 300px;
+        height: 380px;
+    }
+
+    .info {
+        width: 400px;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 22px;
+        width: 110px;
+    }
+
+    .save-btn {
+        padding: 14px;
+    }
+}

@@ -1,0 +1,205 @@
+:root { 
+    --green: #31A74F;
+    --dark-blue: #011627;
+    --light-gray: #f4f4f4;
+    --dark-gray:#727272;
+    --gray:#D9D9D9;
+    --white-gray:#DBDBDB;
+    --white: #ffffff;
+    --red:#E54335;
+    --yellow:#E59c24;
+    --gray-line: #d3d3d3;
+    --b:#F8F8F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gray-line);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+}
+
+nav a.active {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border: 2px solid var(--green); 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+    margin: 40px auto;
+    max-width: 80%;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+h2 {
+    margin: 0 10px;
+}
+
+.pdf-button {
+    background: var(--green);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.pdf-button:hover {
+    opacity: 0.8;
+}
+
+/* 📱 iPhone Portrait Mode */
+@media screen and (max-width: 480px) {
+    nav {
+        gap: 15px; /* Minimized gap between buttons */
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .pdf-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+        padding: 6px; /* Minimized padding for table cells */
+    }
+}
+
+/* 📱 Android Phones Portrait Mode */
+@media screen and (max-width: 768px) {
+    nav {
+        gap: 18px; /* Minimized gap for better layout */
+    }
+
+    .container {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .pdf-button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 8px; /* Minimized padding for table cells */
+    }
+}
+
+/* 💻 Windows Laptops and larger screens */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    nav {
+        gap: 10px; /* Further minimized gap between buttons */
+    }
+
+    .container {
+        padding: 35px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .pdf-button {
+        padding: 12px 18px;
+        font-size: 18px;
+    }
+
+    table, th, td {
+        font-size: 16px;
+        padding: 10px; /* Reduced padding for table cells */
+    }
+}
+
+/* 🖥️ macOS and Larger Screens */
+@media screen and (min-width: 1440px) {
+    nav {
+        gap: 8px; /* Minimal gap for navigation buttons */
+    }
+
+    .container {
+        padding: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .pdf-button {
+        padding: 14px 20px;
+        font-size: 20px;
+    }
+
+    table, th, td {
+        font-size: 18px;
+        padding: 12px; /* Reduced padding for table cells */
+    }
+}
