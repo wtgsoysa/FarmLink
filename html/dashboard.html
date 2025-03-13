@@ -49,15 +49,15 @@
     
         <section class="form-container">
             <section class="tabs">
-                <button class="active" onclick="showSection('register-farmer')" >Register Farmer</button>
-                <button onclick="showSection('view-farmers')">View Farmers</button>
-                <button>View Harvest</button>
-                <button>View Shop</button>
-                <button>View Buyers</button>
+                <button class="active" data-section="register-farmer">Register Farmer</button>
+                <button data-section="view-farmers">View Farmers</button>
+                <button data-section="view-harvest">View Harvest</button>
+                <button data-section="view-shop">View Shop</button>
+                <button data-section="view-buyers">View Buyers</button>
             </section>
 
             <!-- Register Farmer Section -->
-            <section class="register-farmer">
+            <section id="register-farmer" class="content-section">
                 <h2>Register Farmer</h2>
                 <form>
                     <div class="form-group">
@@ -134,10 +134,60 @@
                             <button class="no-btn" onclick="closeDiscardPopup()">No</button>
                         </div>
                     </div>
-
                 </form>
             </section>
 
+             <!-- View Farmers Section -->
+             <section id="view-farmers" class="content-section" style="display: none;">
+                <h2>View Farmers</h2>
+                <button class="pdf-button">Download PDF</button>
+            
+
+                <table>
+                  <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact No</th>
+                        <th>NIC</th>
+                        <th>Acc No</th>
+                        <th>Location</th>
+                        <th>Acres</th>
+                        <th>Compost</th>
+                        <th>Harvest</th>  
+                    </tr>
+                  </thead>
+                <tbody id="farmerTableBody">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+                </table>
+              </section>
+
+              <!-- View Harvest Section -->
+              <section id="view-harvest" class="content-section" style="display: none;">
+                <h2>View Harvest</h2>
+                <button class="pdf-button">Download PDF</button>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Farmer ID</th>
+                            <th>Name</th>
+                            <th>Contact No</th>
+                            <th>Location</th>
+                            <th>Total Harvest</th>
+                            <th>Unit Price (1kg)</th>
+                            <th>Total Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="farmerTableBody">
+                        <!-- Dynamic rows will be inserted here -->
+                    </tbody>
+                </table>
+              </section>
+
+              
 
 
     </main>

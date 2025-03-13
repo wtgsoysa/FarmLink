@@ -186,12 +186,12 @@ header {
     margin: 40px auto;
 }
 
-.register-farmer {
+.content-section {
     width: 50%;
     margin: auto; 
 }
 
-.register-farmer h2 {
+.content-section h2 {
     margin-top: 10px;
     padding-left: 0px;
     font-size: 30px;
@@ -202,6 +202,11 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
+    width: 700px;
+    align-items: center;
+    margin: auto;
+    justify-content: center; 
+    
 }
 
 .form-group {
@@ -337,6 +342,55 @@ button:hover {
     color: white;
     margin-top: 15px;
 }
+
+/*View Section*/
+.content-section {
+    display: flex;                 
+    justify-content: space-between; 
+    padding: 10px;
+    width: 100%;
+}
+
+.content-section h2 {
+    margin: 0;  
+}
+
+.pdf-button {
+    position: absolute;
+    background: var(--green);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left:1005px ;
+    margin-top: -40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.delete-button {
+    background: var(--red);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/*View Harvest Section*/
+
+
 
 
 /*Footer Section*/
