@@ -281,6 +281,34 @@ header {
     border: 2px solid var(--green); 
 }
 
+/* Adjust button size for smaller screens */
+/* Adjust button size for smaller screens */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px; /* Adjust gap between buttons */
+    }
+
+    .tabs button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 100%; /* Make buttons full-width */
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Adjust gap between buttons */
+    }
+
+    .tabs button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 100%; /* Full-width buttons on very small screens */
+    }
+}
+
 
 
 /* Register Farmer section*/
@@ -291,10 +319,11 @@ header {
     box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
     max-width: 80%;
     margin: 40px auto;
+    width: 100%;
 }
 
 .content-section {
-    width: 50%;
+    width: 100%;
     margin: auto; 
 }
 
@@ -328,18 +357,18 @@ input, select {
     border: 1px solid black;
     border-radius: 5px;
     transition: border 0.3s ease, background-color 0.3s ease;
+    width: 100%;
 }
 
-/* Style for input/select when focused (clicked) */
 input:focus, select:focus {
-    border: 1px dashed var(--green);  /* Green dashed border */
-    background-color: var(--light-gray);  /* Light gray background */
+    border: 1px dashed var(--green);  
+    background-color: var(--light-gray); 
 }
 
-/* Style for input/select when clicked (active) */
+
 input:active, select:active {
-    border: 1px dashed var(--green);  /* Green dashed border */
-    background-color: var(--light-gray);  /* Light gray background */
+    border: 1px dashed var(--green);  
+    background-color: var(--light-gray);
 }
 
 .form-actions {
@@ -349,9 +378,9 @@ input:active, select:active {
 
 .form-actions button {
     margin: 30px;
+    width: 250px; 
 }
 
-/* Pop Up Buttons*/
 .register {
     background-color: var(--green);
     color: white;
@@ -370,6 +399,7 @@ input:active, select:active {
     font-size: 15px;
 }
 
+/* Pop Up Buttons*/
 .register-popup {
     width: 400px;
     background: white;
@@ -461,6 +491,45 @@ button:hover {
     background-color: var(--green);
     color: white;
     margin-top: 15px;
+}
+
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;  /* Change to a single column layout */
+        max-width: 100%;  /* Allow full width on small screens */
+    }
+
+    .form-group {
+        grid-column: span 1;  /* Ensure each form field takes full width */
+    }
+
+    .form-actions {
+        grid-column: span 1;
+    }
+
+    .form-actions button {
+        width: 100%;  /* Make buttons full width on smaller screens */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    form {
+        grid-template-columns: 1fr;  /* Single column layout */
+        padding: 10px;  /* Add some padding */
+    }
+
+    input, select {
+        padding: 8px;  /* Slightly smaller padding */
+    }
+
+    .form-actions button {
+        width: 100%;  /* Full width button */
+        padding: 12px;
+        font-size: 16px;  /* Increase font size for readability */
+    }
 }
 
 /*View Section*/
@@ -796,98 +865,3 @@ footer .footer-center {
 }
 
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .stats-container {
-        max-width: 95%;
-    }
-}
-
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .tabs {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .form-container {
-        padding: 20px;
-    }
-
-    .register-farmer h2 {
-        font-size: 2rem;
-    }
-
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-        width: 100%;
-        text-align: center;
-    }
-
-    footer {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .stats-container {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .weather-box, .stat-box {
-        min-width: 100%;
-        padding: 20px;
-    }
-
-    .register-farmer {
-        width: 100%;
-    }
-
-    .form-actions button {
-        width: 100%;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .stats-container {
-        padding: 10px;
-    }
-
-    .weather-box, .stat-box {
-        min-width: 100%;
-    }
-
-    footer {
-        padding: 15px;
-    }
-}
