@@ -1,3 +1,81 @@
+//Card section
+
+// Function to format the date as "Monday, 28 January"
+function formatDate() {
+    const now = new Date();
+    
+    // Days of the week
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    // Months of the year
+    const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    const dayOfWeek = daysOfWeek[now.getDay()];
+    const dayOfMonth = now.getDate();
+    const month = monthsOfYear[now.getMonth()];
+    
+    const dateString = `${dayOfWeek}, ${dayOfMonth} ${month}`;
+    document.getElementById("date").textContent = dateString;
+}
+
+// Function to update the current time
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const formattedHours = hours % 12 || 12;
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    const timeString = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
+    document.getElementById("time").textContent = timeString;
+}
+
+// Simulated weather data update
+function updateWeather() {
+    const weatherData = {
+        temperature: "30°C",
+        condition: "Mostly Cloudy",
+        iconClass: "fas fa-cloud" // You can change this depending on the weather condition
+    };
+    
+    document.getElementById("temperature").textContent = weatherData.temperature;
+    document.getElementById("weather-condition").textContent = weatherData.condition;
+    document.getElementById("weather-icon").className = weatherData.iconClass;
+}
+
+// Simulated statistics data update
+function updateStats() {
+    const statsData = {
+        staffCount: "259",
+        farmersCount: "1,110",
+        harvestCount: "45,000kg",
+        buyersCount: "134"
+    };
+    
+    document.getElementById("staff-count").textContent = statsData.staffCount;
+    document.getElementById("farmers-count").textContent = statsData.farmersCount;
+    document.getElementById("harvest-count").textContent = statsData.harvestCount;
+    document.getElementById("buyers-count").textContent = statsData.buyersCount;
+}
+
+// Update all data
+function updateData() {
+    formatDate();
+    updateTime();
+    updateWeather();
+    updateStats();
+}
+
+// Call updateData every second to keep the time updated
+setInterval(updateData, 1000); // Every 1000ms = 1 second
+
+// Initial update when page loads
+updateData();
+
+
 function openPopup() {
     let form = document.querySelector(".content-section form");
 
@@ -112,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Urea</h3>
                             <span class="id-no">201</span>
                         </div>
-                        <p class="description">Urea – The most commonly used nitrogen fertilizer for rice growth.</p>
+                        <p class="description">Urea is a widely used nitrogen-based fertilizer that provides essential nutrients for plant growth.</p>
                         <span class="price">Rs 990.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>21KG In Stock</b></span>
@@ -125,10 +203,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -151,10 +229,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -177,10 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                       <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                       </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -203,10 +281,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -232,10 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -258,10 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -271,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Liquid Phosphoric Acid</h3>
                             <span class="id-no">207</span>
                         </div>
-                        <p class="description">Liquid Phosphoric Acid – Promotes strong roots and early flowering.</p>
+                        <p class="description">Liquid Phosphoric Acid is used in agriculture to enhance root development, early flowering, and overall plant health. </p>
                         <span class="price">Rs 750.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>15 In Stock</b></span>
@@ -284,10 +362,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -297,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Mono-Ammonium Phosphate</h3>
                             <span class="id-no">208</span>
                         </div>
-                        <p class="description">MonoAmmonium Phosphate – Provide nitrogen and phosphorus.</p>
+                        <p class="description">Used water-soluble fertilizer that provides essential nitrogen and phosphorus to crops. </p>
                         <span class="price">Rs 1250.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>15KG In Stock</b></span>
@@ -310,10 +388,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -326,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Foliar Spray</h3>
                             <span class="id-no">209</span>
                         </div>
-                        <p class="description">Foliar Spray – Directly sprayed onto leaves for quick absorption .</p>
+                        <p class="description">Foliar spraying is a method of applying liquid fertilizers, nutrients, or pesticides directly onto plant leaves.</p>
                         <span class="price">Rs 950.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>19 In Stock</b></span>
@@ -339,10 +417,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -365,10 +443,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -378,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Liquid NPK Fertilizers</h3>
                             <span class="id-no">211</span>
                         </div>
-                        <p class="description">Liquid NPK Fertilizers – Balanced nutrient supply through leaves.</p>
+                        <p class="description">Liquid NPK fertilizers are water-soluble fertilizers that contain the three essential macronutrients for plant growth:</p>
                         <span class="price">Rs 1750.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>25 In Stock</b></span>
@@ -391,10 +469,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -404,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Compost</h3>
                             <span class="id-no">212</span>
                         </div>
-                        <p class="description">Compost – Improves soil structure and microbial activity.</p>
+                        <p class="description">Organic fertilizer from decomposed plant and animal matter, enhancing soil quality and plant growth.</p>
                         <span class="price">Rs 700.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>30KG In Stock</b></span>
@@ -417,10 +495,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -433,7 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">ZincSulfate</h3>
                             <span class="id-no">213</span>
                         </div>
-                        <p class="description">Zinc Sulfate – Prevents zinc deficiency (common in paddy).</p>
+                        <p class="description">Water soluble micronutrient fertilizer that supplies zinc, an essential element for plant growth.</p>
                         <span class="price">Rs 970.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>25KG In Stock</b></span>
@@ -446,20 +524,20 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
                     <img src="../assets/image_26.png" alt="Humic&FulvicAcidFertilizers">
                     <div class="card-content">
                         <div class="card-header">
-                            <h3 class="title">Humic & Fulvic Acid Fertilizers</h3>
+                            <h3 class="title">Humic & Fulvic Acid </h3>
                             <span class="id-no">214</span>
                         </div>
-                        <p class="description">Humic & Fulvic Acid – Improves soil structure and nutrient uptake.</p>
+                        <p class="description">Humic & Fulvic Acid – Improves soil structure, nutrient uptake, and plant health.</p>
                         <span class="price">Rs 1000.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>17 In Stock</b></span>
@@ -472,10 +550,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -485,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <h3 class="title">Ferrous Sulfate</h3>
                             <span class="id-no">215</span>
                         </div>
-                        <p class="description">Ferrous Sulfate – Supplies iron to prevent iron chlorosis.</p>
+                        <p class="description">Supplies iron to prevent iron chlorosis, enhance photosynthesis, and boost root strength.</p>
                         <span class="price">Rs 880.00</span>
                         <div class="stock-info">
                             <span class="stock"><b>23KG In Stock</b></span>
@@ -498,10 +576,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="card">
@@ -524,10 +602,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <span>4.0</span>
                             </span>
                         </div>
-                        <div class="buttons">
-                            <button class="edit">edit</button>
-                            <button class="delete">delete</button>
-                        </div>
+                        <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -536,6 +614,9 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
     });
 });
+
+
+
 
 
 
