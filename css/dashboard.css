@@ -202,6 +202,57 @@ header {
     animation: pulseIcon 2s infinite ease-in-out;  
 }
 
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .stats-container {
+        max-width: 95%;
+        padding: 20px;
+    }
+    .weather-box, .stat-box {
+        min-width: 220px;
+        padding: 30px;
+        font-size: 18px;
+    }
+    .weather-box {
+        flex: 1 1 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+    .weather-box, .stat-box {
+        min-width: 200px;
+        padding: 25px;
+        font-size: 16px;
+        height: auto;
+    }
+    .weather-box {
+        flex: 1 1 200px;
+    }
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .stats-container {
+        max-width: 100px;
+        padding: 15px;
+    }
+    .weather-box, .stat-box {
+        min-width: 180px;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .weather-box {
+        flex: 1 1 180px;
+    }
+}
 
 
 /*Navbar Section*/
@@ -229,6 +280,8 @@ header {
     border-radius: 20px;
     border: 2px solid var(--green); 
 }
+
+
 
 /* Register Farmer section*/
 .form-container {
