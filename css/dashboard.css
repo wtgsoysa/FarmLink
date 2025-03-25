@@ -353,11 +353,10 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    color: var(--dark-gray);
     font-weight: 500;
 }
 
-input, select {
+.input, select {
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -893,7 +892,6 @@ button.delete {
     background: var(--red);
 }
 
-
 @media screen and (max-width: 768px) {
     .section-title {
         font-size: 20px; 
@@ -954,7 +952,275 @@ button.delete {
     }
 }
 
+/* Disable scrolling on the main page when popup is open */
+body.popup-open {
+    overflow: hidden;
+}
 
+/* Popup container - fixed in center */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    width: 800px;  /* Adjust width as needed */
+    max-height: 80vh;  /* Limits popup height */
+    overflow-y: auto; /* Enables scrolling */
+}
+
+/* Ensures popup content does not overflow */
+#popup .product-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay to darken background when popup appears */
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+
+
+.product-container {
+    display: flex;
+    flex-direction: column; /* 🔹 Stack elements in a column */
+    gap: 20px; /* 🔹 Adds spacing between upload box and product card */
+    align-items: center; /* 🔹 Center items horizontally */
+    justify-content: center; /* 🔹 Align items vertically */
+}
+
+.upload-box {
+    width: 250px;
+    height: 310px;
+    background-color: var(--white-gray);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.plus-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--green);
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-button:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px dashed transparent;
+    background: white;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: border 0.3s ease-in-out;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--dark-gray);
+    font-family: poppins;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 1px dashed var(--green);
+    background-color: var(--light);
+}
+
+.product-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 20px;
+    width: 900px; /* 🔹 Allows it to expand */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1; /* 🔹 Allows it to take remaining space */
+}
+
+.product-card label {
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.stock-control {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    border-radius: 15px;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.stock-control button {
+    background: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#stock-count {
+    font-size: 15px;
+}
+
+.add-to-shop {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.upload-box img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: fill;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*edit popup*/
+body.edit-popup-open {
+    overflow: hidden;
+}
+#edit-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+#edit-popup {
+      position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    width: 800px;  /* Adjust width as needed */
+    max-height: 80vh;  /* Limits popup height */
+    overflow-y: auto; /* Enables scrolling */
+}
+
+#edit-popup .product-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--red);
+}
+
+/* Delete Popup*/
+.Delete-Popup {
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    transform: translateX(-50%) scale(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    visibility: hidden;
+    transition: transform 0.3s, visibility 0.3s;
+}
+
+.Delete-Popup .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center; 
+}
+
+.Delete-Popup button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 90px;
+    height: 40px; /* Ensure uniform height for buttons */
+    box-sizing: border-box; /* Includes padding in the size calculation */
+}
+
+.Delete-Popup .no-btn {
+    background-color: var(--green);
+    color: white;
+}
+
+.Delete-Popup .delete-btn {
+    background-color: var(--red);
+    color: white;
+}
+
+.Delete-Popup button:hover {
+    opacity: 0.8;
+}
 
 /*Footer Section*/
 footer {
@@ -1108,6 +1374,8 @@ footer .footer-center {
         font-size: 12px; 
     }
 }
+
+
 
 
 
