@@ -1,13 +1,15 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const db = require("./db");
+const staffRoutes = require("./routes/staff");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Test Route
+// API Routes
+app.use("/api/staff", staffRoutes);
+
 app.get("/", (req, res) => {
   res.send("FarmLink Backend is Running! 🚀");
 });
